@@ -20,10 +20,7 @@ if [ -z ${source_dir} ]; then
     exit 0
 fi
 
-if [ -z ${ntopngUrl} ]; then
-    Echo_Red 'ntopng url is empty!'
-    exit 0
-fi
+
 
 #  tar -zcvf ${appName}.tar.gz ${appName}/*  将${appName}文件夹压缩打包
 tar_code(){
@@ -42,9 +39,7 @@ update_config(){
     sed -i "s/'debug'           => true/'debug'           => false/g" ${webroot}config/database.php
     sed -i "s/'password'        => '123456'/'password'        => ${mysqlPassword}/g" ${webroot}config/database.php
 
-    cd ${webroot}shell
-    chmod -R 555 *
-    chmod -R 555 */*
+   
     chown -R www:www ${webroot}
     chown -R www:www ${webroot}*
 

@@ -18,7 +18,7 @@ init_jdk_code(){
 
 }
 
-init_jdk_env(){
+init_jdk_environment(){
     echo "export JAVA_HOME=/usr/local/java/${jdkTarName}
 export JRE_HOME=\${JAVA_HOME}/jre
 export CLASSPATH=.:\${JAVA_HOME}/lib:\${JRE_HOME}/lib
@@ -27,4 +27,4 @@ export PATH=\${JAVA_HOME}/bin:\$PATH" >> /etc/profile
 }
 create_jdk_dir
 init_jdk_code
-init_jdk_env
+init_jdk_environment
